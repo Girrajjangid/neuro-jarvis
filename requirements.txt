@@ -1,0 +1,10 @@
+Flask
+sklearn
+pandas
+numpy
+matplotlib
+gunicorn
+scipy
+torch
+nltk
+sentence-transformers

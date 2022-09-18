@@ -1,0 +1,656 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+        .logo{
+            /* background: url("p.png") no-repeat center center/cover; */
+            position: relative;
+            left: 50px;
+            top: 50px;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 400px;
+            gap: 5px;
+
+        }
+        body{
+            background-color: black;
+        }
+
+        header {
+            display: grid;
+            grid-template-columns: 300px auto;
+            /* background-color: black; */
+            /* grid-template-rows:  ; */
+            /* height: 100px; */
+        }
+
+        header::before {
+            content: " ";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("image.jpg") no-repeat center center/cover;
+            opacity: .8;
+            z-index: -1;
+        }
+
+        .box {
+            border: 2px solid black;
+            /* background-color: aqua; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .logo img{
+            width: 250px;
+            height: 300px;
+        }
+
+        .box1 {
+            font-size: 5rem;
+        }
+
+        .input input {
+            width: 40rem;
+            height: 3rem;
+            border-radius: 10px;
+        }
+
+        .submit input {
+            margin-top: 10px;
+            width: 100px;
+            height: 50px;
+        }
+
+        #answer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 400px;
+            height: 50px;
+            display: none;
+        }
+
+        svg {
+            display: block;
+            font: 7.5em 'Montserrat';
+            width: 100%;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .text-copy {
+            fill: none;
+            stroke: white;
+            stroke-dasharray: 6% 29%;
+            stroke-width: 5px;
+            stroke-dashoffset: 0%;
+            animation: stroke-offset 5.5s infinite linear;
+        }
+
+        .text-copy:nth-child(1) {
+            stroke: #4D163D;
+            animation-delay: -1;
+        }
+
+        .text-copy:nth-child(2) {
+            stroke: #840037;
+            animation-delay: -2s;
+        }
+
+        .text-copy:nth-child(3) {
+            stroke: #BD0034;
+            animation-delay: -3s;
+        }
+
+        .text-copy:nth-child(4) {
+            stroke: #BD0034;
+            animation-delay: -4s;
+        }
+
+        .text-copy:nth-child(5) {
+            stroke: #FDB731;
+            animation-delay: -5s;
+        }
+
+        @keyframes stroke-offset {
+            100% {
+                stroke-dashoffset: -35%;
+            }
+        }
+
+        .animate-charcter {
+            text-transform: uppercase;
+            background-image: linear-gradient(-225deg,
+                    #231557 0%,
+                    #44107a 29%,
+                    #ff1361 67%,
+                    #fff800 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 2s linear infinite;
+            display: inline-block;
+            font-size: 100px;
+        }
+
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+        @media (min-width:1024px) and (max-width : 1280px){
+            section{
+                height: 300px;
+            }
+            svg{
+                font-size: 6rem;
+            }
+            .logo img{
+                width: 200px;
+                height: 250px;
+            }
+            .logo{
+                position: relative;
+                left: 10px;
+                top: 20px;
+            }
+            .animate-charcter{
+                font-size: 80px;
+            }
+            .input input{
+                width: 500px;
+            }
+        }
+        @media (min-width:767px) and (max-width : 1024px){
+            section{
+                height: 200px;
+            }
+            svg{
+                font-size: 7rem;
+            }
+            .logo img{
+                width: 150px;
+                height: 200px;
+            }
+            .logo{
+                position: relative;
+                left: 0px;
+                top: 0px;
+            }
+            .animate-charcter{
+                font-size: 50px;
+            }
+            .input input{
+                width: 400px;
+            }
+
+        }
+        @media (min-width:480px) and (max-width : 767px){
+            header{
+                display: block;
+            }
+            section{
+                height: 100px;
+            }
+            svg{
+                display: block;
+                position: relative;
+                top: -50px;
+                font-size: 5rem;
+            }
+            .logo img{
+                width: 100px;
+                height: 150px;
+            }
+            .logo{
+                display: none;
+            }
+            .animate-charcter{
+                font-size: 50px;
+            }
+            .input input{
+                width: 300px;
+            }
+        }
+        @media (min-width:250px) and (max-width :480px){
+            header{
+                display: block;
+            }
+            section{
+                height: 50px;
+            }
+            svg{
+                height: 200px;
+                display: block;
+                position: relative;
+                top: -50px;
+                font-size: 5.5rem;
+            }
+            .logo img{
+                width: 100px;
+                height: 150px;
+            }
+            .logo{
+                display: none;
+            }
+            .animate-charcter{
+                font-size: 30px;
+            }
+            .input input{
+                width: 200px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <video autoplay loop plays-inline>
+        <source src="./video.mp4" type="video/mp4">
+    </video> -->
+    <header>
+        <div class="logo box">
+            <img src="./p.png" alt="">
+        </div>
+        <svg viewBox="0 0 960 300">
+            <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="80%">I NEURON BOT </text>
+                <!-- <text text-anchor="middle" x="52%" y="80%">I NEURON BOT </text> -->
+
+            </symbol>
+
+            <g class="g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+            </g>
+        </svg>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="animate-charcter"> Enter Your Query</h3>
+                </div>
+            </div>
+        </div>
+        <div class="input">
+            <input type="input">
+        </div>
+        <div class="submit">
+            <input type="button" value="Submit" onclick="bookRoom()">
+        </div>
+        <div id="answer">
+            <h2>This is answer</h2>
+        </div>
+    </section>
+</body>
+
+<script type="text/javascript">
+    var bookRoom = function () {
+        var roomm;
+        document.getElementById("answer").style.display = "block";
+    }
+</script>
+
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+        .logo{
+            /* background: url("p.png") no-repeat center center/cover; */
+            position: relative;
+            left: 50px;
+            top: 50px;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 400px;
+            gap: 5px;
+
+        }
+        body{
+            background-color: black;
+        }
+
+        header {
+            display: grid;
+            grid-template-columns: 300px auto;
+            /* background-color: black; */
+            /* grid-template-rows:  ; */
+            /* height: 100px; */
+        }
+
+        header::before {
+            content: " ";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("image.jpg") no-repeat center center/cover;
+            opacity: .8;
+            z-index: -1;
+        }
+
+        .box {
+            border: 2px solid black;
+            /* background-color: aqua; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .logo img{
+            width: 250px;
+            height: 300px;
+        }
+
+        .box1 {
+            font-size: 5rem;
+        }
+
+        .input input {
+            width: 40rem;
+            height: 3rem;
+            border-radius: 10px;
+        }
+
+        .submit input {
+            margin-top: 10px;
+            width: 100px;
+            height: 50px;
+        }
+
+        #answer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 400px;
+            height: 50px;
+            display: none;
+        }
+
+        svg {
+            display: block;
+            font: 7.5em 'Montserrat';
+            width: 100%;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .text-copy {
+            fill: none;
+            stroke: white;
+            stroke-dasharray: 6% 29%;
+            stroke-width: 5px;
+            stroke-dashoffset: 0%;
+            animation: stroke-offset 5.5s infinite linear;
+        }
+
+        .text-copy:nth-child(1) {
+            stroke: #4D163D;
+            animation-delay: -1;
+        }
+
+        .text-copy:nth-child(2) {
+            stroke: #840037;
+            animation-delay: -2s;
+        }
+
+        .text-copy:nth-child(3) {
+            stroke: #BD0034;
+            animation-delay: -3s;
+        }
+
+        .text-copy:nth-child(4) {
+            stroke: #BD0034;
+            animation-delay: -4s;
+        }
+
+        .text-copy:nth-child(5) {
+            stroke: #FDB731;
+            animation-delay: -5s;
+        }
+
+        @keyframes stroke-offset {
+            100% {
+                stroke-dashoffset: -35%;
+            }
+        }
+
+        .animate-charcter {
+            text-transform: uppercase;
+            background-image: linear-gradient(-225deg,
+                    #231557 0%,
+                    #44107a 29%,
+                    #ff1361 67%,
+                    #fff800 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 2s linear infinite;
+            display: inline-block;
+            font-size: 100px;
+        }
+
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+        @media (min-width:1024px) and (max-width : 1280px){
+            section{
+                height: 300px;
+            }
+            svg{
+                font-size: 6rem;
+            }
+            .logo img{
+                width: 200px;
+                height: 250px;
+            }
+            .logo{
+                position: relative;
+                left: 10px;
+                top: 20px;
+            }
+            .animate-charcter{
+                font-size: 80px;
+            }
+            .input input{
+                width: 500px;
+            }
+        }
+        @media (min-width:767px) and (max-width : 1024px){
+            section{
+                height: 200px;
+            }
+            svg{
+                font-size: 7rem;
+            }
+            .logo img{
+                width: 150px;
+                height: 200px;
+            }
+            .logo{
+                position: relative;
+                left: 0px;
+                top: 0px;
+            }
+            .animate-charcter{
+                font-size: 50px;
+            }
+            .input input{
+                width: 400px;
+            }
+
+        }
+        @media (min-width:480px) and (max-width : 767px){
+            header{
+                display: block;
+            }
+            section{
+                height: 100px;
+            }
+            svg{
+                display: block;
+                position: relative;
+                top: -50px;
+                font-size: 5rem;
+            }
+            .logo img{
+                width: 100px;
+                height: 150px;
+            }
+            .logo{
+                display: none;
+            }
+            .animate-charcter{
+                font-size: 50px;
+            }
+            .input input{
+                width: 300px;
+            }
+        }
+        @media (min-width:250px) and (max-width :480px){
+            header{
+                display: block;
+            }
+            section{
+                height: 50px;
+            }
+            svg{
+                height: 200px;
+                display: block;
+                position: relative;
+                top: -50px;
+                font-size: 5.5rem;
+            }
+            .logo img{
+                width: 100px;
+                height: 150px;
+            }
+            .logo{
+                display: none;
+            }
+            .animate-charcter{
+                font-size: 30px;
+            }
+            .input input{
+                width: 200px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <video autoplay loop plays-inline>
+        <source src="./video.mp4" type="video/mp4">
+    </video> -->
+    <header>
+        <div class="logo box">
+            <img src="./p.png" alt="">
+        </div>
+        <svg viewBox="0 0 960 300">
+            <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="80%">I NEURON BOT </text>
+                <!-- <text text-anchor="middle" x="52%" y="80%">I NEURON BOT </text> -->
+
+            </symbol>
+
+            <g class="g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+            </g>
+        </svg>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="animate-charcter"> Enter Your Query</h3>
+                </div>
+            </div>
+        </div>
+        <div class="input">
+            <input type="input">
+        </div>
+        <div class="submit">
+            <input type="button" value="Submit" onclick="bookRoom()">
+        </div>
+        <div id="answer">
+            <h2>This is answer</h2>
+        </div>
+    </section>
+</body>
+
+<script type="text/javascript">
+    var bookRoom = function () {
+        var roomm;
+        document.getElementById("answer").style.display = "block";
+    }
+</script>
+
+>>>>>>> 33b57af31bca84a1a95bbf2c00622c856fa7f254
+</html>
