@@ -31,9 +31,8 @@ def predict_api():
     #text = "Sir can you please help me"
     text = [str(text)]
     model = SentenceTransformer('all-MiniLM-L6-v2')
-    file_path = os.path.join(basepath, 'dataset/')
-    df = pd.read_csv(f'{file_path}processed.csv')
-    embedded = torch.load(f'{file_path}embedding.pt')
+    df = pd.read_pickle('processed')
+    embedded = pd.read_pickle('embedding')
     new_embeddings1 = model.encode(text, convert_to_tensor=True)
     cosine_scores = util.cos_sim(embedded, new_embeddings1)
     max_score_index = torch.argmax(cosine_scores).item()
@@ -49,9 +48,8 @@ def predict():
     #text = "Sir can you please help me"
     text = [str(text)]
     model = SentenceTransformer('all-MiniLM-L6-v2')
-    file_path = os.path.join(basepath, 'dataset/')
-    df = pd.read_csv(f'{file_path}processed.csv')
-    embedded = torch.load(f'{file_path}embedding.pt')
+    df = pd.read_pickle('processed')
+    embedded = pd.read_pickle('embedding')
     new_embeddings1 = model.encode(text, convert_to_tensor=True)
     cosine_scores = util.cos_sim(embedded, new_embeddings1)
     max_score_index = torch.argmax(cosine_scores).item()
