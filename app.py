@@ -26,10 +26,9 @@ def home():
 def predict_api():
     data=request.json['data']
     print(data)
-    print(np.array(list(data.values())).reshape(1,-1))
-    text = np.array(list(data.values())).reshape(1,-1)[0]
-    #text = "Sir can you please help me"
-    text = [str(text)]
+    data=[x for x in request.form.values()]
+    print(data)
+    text = data[0]
     model = SentenceTransformer('all-MiniLM-L6-v2')
     df = pd.read_pickle('processed')
     embedded = pd.read_pickle('embedding')
@@ -43,10 +42,9 @@ def predict_api():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    data=[float(x) for x in request.form.values()]
-    text = np.array(data).reshape(1,-1)[0]
-    #text = "Sir can you please help me"
-    text = [str(text)]
+    data=[x for x in request.form.values()]
+    print(data)
+    text = data[0]
     model = SentenceTransformer('all-MiniLM-L6-v2')
     df = pd.read_pickle('processed')
     embedded = pd.read_pickle('embedding')
