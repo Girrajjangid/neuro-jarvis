@@ -18,9 +18,9 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
-def home():
+def index():
     # Main page
-    return render_template('home.html')
+    return render_template('index.html')
 
 
 @app.route('/predict_api',methods=['POST'])
@@ -54,7 +54,7 @@ def predict():
     max_score_index = torch.argmax(cosine_scores).item()
     output = df.iloc[max_score_index].answer 
     print(output)
-    return render_template("home.html",prediction_text="{}".format(output))
+    return render_template("index.html",prediction_text="{}".format(output))
 
 
 if __name__ == '__main__':
